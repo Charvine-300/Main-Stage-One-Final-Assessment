@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
             },
         }) as News;
 
-        return response.articles || [];
+        return response || [];
     } catch (error) {
         console.error("Error fetching articles:", error);
         throw error;

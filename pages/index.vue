@@ -16,18 +16,11 @@ import type { Article } from '~/utils/types';
 
 let articles = reactive<Article[]>([]);
 const loading = ref(false);
-const question = ref("lifestyle");
+const question = ref("bitcoin");
 
 const fetchNews = async () => {
     loading.value = true;
-    const response = await useFetch<News>("https://newsapi.org/v2/everything", {
-            params: {
-                q: question,
-                apiKey: "94028abe7f85459e830281b3c33ca944",
-                page: 1,
-                pageSize: 12,
-            },
-        });
+    const response = await useFetch<News>(`/api/news/${question.value}`);
 
 if (response.data.value) {
     articles = response.data.value?.articles;
