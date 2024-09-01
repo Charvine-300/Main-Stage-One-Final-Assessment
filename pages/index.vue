@@ -20,7 +20,9 @@ const question = ref("bitcoin");
 
 const fetchNews = async () => {
     loading.value = true;
-    const response = await useFetch<News>(`/api/news/${question.value}`);
+    await nextTick()
+    
+    const response = await useFetch<News>(() => `/api/news/${question.value}`);
 
 if (response.data.value) {
     articles = response.data.value?.articles;
