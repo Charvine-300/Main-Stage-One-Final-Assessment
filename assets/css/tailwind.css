@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @layer bg-white-100;
+    font-family: "Work Sans", sans-serif;
+}
