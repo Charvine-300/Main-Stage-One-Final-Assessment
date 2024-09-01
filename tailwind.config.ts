@@ -22,7 +22,7 @@ export default {
               'custom': '0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06)',
             },
             animation: {
-              'spin-fast': 'spin 0.5s linear infinite', // Spins fast (adjust the time to make it faster or slower)
+              'spin-fast': 'spin 2s linear infinite', // Spins fast (adjust the time to make it faster or slower)
             },
           },
     },

@@ -1,5 +1,11 @@
 <template>
     <div class="max-w-[800px] mx-auto">
+        <NuxtLink to="/">
+            <div class="my-5 flex gap-3 items-center cursor-pointer">
+                <img src="/back.png" alt="go back icon" />
+                <p class="text-black-100 font-medium">Back to articles</p>
+            </div>
+        </NuxtLink>
 <div class="px-4 my-20 mx-auto">
     <h1 class="font-bold text-black-100 text-2xl mt-3 line-clamp-3"> {{ articleDetails?.title }} </h1>
     <div class="flex flex-row gap-5 mt-3 text-gray-200">
@@ -30,6 +36,10 @@ onMounted(() => {
     if (articlesStash) {
         const articles = JSON.parse(articlesStash);
         articleDetails = articles.find((item: Article) => item.title === id);
+
+        if (!articleDetails) {
+  throw createError({ statusCode: 404, statusMessage: "Article does not exist", fatal: true })
+}
     }
 })
 

@@ -1,13 +1,14 @@
 <template>
     <div class="h-full min-h-[100vh] flex flex-col justify-between">
 <header class="py-5 px-3 shadow-md cursor-pointer">
-    <div class="flex flex-row justify-center items-center max-w-[1440px] mx-auto">
+    <div class="flex flex-row justify-between items-center max-w-[1440px] mx-auto">
         <NuxtLink to="/">
             <div class="flex items-center gap-2">
             <img src="/logo.png" alt="Logo icon" class="w-[50px] h-[50px]" />
             <h1 class="text-xl font-bold"> NewsHub </h1>
             </div>
         </NuxtLink>
+        <img src="/user.png" alt="mock user icon" class="cursor-pointer w-[50px] h-[50px] ">
     </div>
 </header>
 <NuxtPage />
