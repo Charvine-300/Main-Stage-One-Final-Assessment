@@ -20,8 +20,9 @@ const question = ref("bitcoin");
 
 const fetchNews = async () => {
     loading.value = true;
+    // Proper timing for API requestq
     await nextTick()
-    
+
     const response = await useFetch<News>(() => `/api/news/${question.value}`);
 
 if (response.data.value) {
